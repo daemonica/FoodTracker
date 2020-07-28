@@ -41,11 +41,24 @@
                                     <constraint firstAttribute="trailing" secondItem="EXd-uX-pxi" secondAttribute="trailing" id="lyz-WY-PGD"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="oMp-vH-51Z">
+                                <rect key="frame" x="16" y="128" width="320" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oMp-vH-51Z" secondAttribute="height" multiplier="1:1" id="Peo-lq-N6j"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hOc-oK-RFb" appends="YES" id="ljR-Bd-0gY"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oMp-vH-51Z" secondAttribute="trailing" constant="39" id="2vn-vq-lf1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qca-He-moI" secondAttribute="trailing" constant="16" id="B7e-BT-wkj"/>
                             <constraint firstItem="Qca-He-moI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FvO-kH-rjs"/>
+                            <constraint firstItem="oMp-vH-51Z" firstAttribute="leading" secondItem="Qca-He-moI" secondAttribute="leading" id="Ski-RI-1Nu"/>
+                            <constraint firstItem="oMp-vH-51Z" firstAttribute="top" secondItem="Qca-He-moI" secondAttribute="bottom" constant="7.5" id="jgw-aF-isp"/>
                             <constraint firstItem="Qca-He-moI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wjY-jv-xmO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -53,11 +66,20 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="xEv-Ao-hqw" id="kNh-No-9Oq"/>
                         <outlet property="nameTextField" destination="EXd-uX-pxi" id="UbS-mG-wsZ"/>
+                        <outlet property="photoImageView" destination="oMp-vH-51Z" id="mHH-QY-3nu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hOc-oK-RFb">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="IXQ-67-RmF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="540" height="540"/>
+    </resources>
 </document>
