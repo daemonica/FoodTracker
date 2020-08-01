@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD4A144324D5B80E00448141 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A144224D5B80E00448141 /* RatingControl.swift */; };
 		FD6CC1E524CD07FA006C21CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CC1E424CD07FA006C21CB /* AppDelegate.swift */; };
 		FD6CC1E724CD07FA006C21CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CC1E624CD07FA006C21CB /* SceneDelegate.swift */; };
 		FD6CC1E924CD07FA006C21CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CC1E824CD07FA006C21CB /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD4A144224D5B80E00448141 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		FD6CC1E124CD07FA006C21CB /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6CC1E424CD07FA006C21CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD6CC1E624CD07FA006C21CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				FD6CC1E624CD07FA006C21CB /* SceneDelegate.swift */,
 				FD6CC1E824CD07FA006C21CB /* ViewController.swift */,
 				FD6CC1EA24CD07FA006C21CB /* Main.storyboard */,
+				FD4A144224D5B80E00448141 /* RatingControl.swift */,
 				FD6CC1ED24CD07FB006C21CB /* Assets.xcassets */,
 				FD6CC1EF24CD07FB006C21CB /* LaunchScreen.storyboard */,
 				FD6CC1F224CD07FB006C21CB /* Info.plist */,
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4A144324D5B80E00448141 /* RatingControl.swift in Sources */,
 				FD6CC1E924CD07FA006C21CB /* ViewController.swift in Sources */,
 				FD6CC1E524CD07FA006C21CB /* AppDelegate.swift in Sources */,
 				FD6CC1E724CD07FA006C21CB /* SceneDelegate.swift in Sources */,
@@ -293,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -347,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -361,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodTracker/FoodTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BB23D5JB7;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
@@ -370,6 +375,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FoodTrackerDaemonicat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodTracker/FoodTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BB23D5JB7;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
@@ -388,6 +395,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FoodTrackerDaemonicat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
