@@ -28,7 +28,6 @@ class Meal {
         guard (rating >= 0) && (rating <= 5) else {
             return nil
         }
-
         
         // Initialize stored properties.
         self.name = name
