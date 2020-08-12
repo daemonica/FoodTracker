@@ -1,16 +1,9 @@
-//
-//  MealViewController.swift
-//  FoodTracker
-//
-//  Created by Дмитрий Кузьмин on 26.07.2020.
-//
-
 import UIKit
 import os.log
 
 class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    //MARK: Properties
+    // MARK: Properties
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -41,7 +34,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         updateSaveButtonState()
     }
     
-    //MARK: UITextFieldDelegate
+    // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard
@@ -59,7 +52,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         navigationItem.title = textField.text
     }
     
-    //MARK: UIImagePickerControllerDelegate
+    // MARK: UIImagePickerControllerDelegate
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
@@ -83,7 +76,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK: Navigation
+    // MARK: Navigation
     
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -121,7 +114,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         meal = Meal(name: name, photo: photo, rating: rating)
     }
     
-    //MARK: Actions
+    // MARK: Actions
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
@@ -145,7 +138,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         }
     }
     
-    //MARK: Private Methods
+    // MARK: Private Methods
     
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.

@@ -1,15 +1,8 @@
-//
-//  RatingControl.swift
-//  FoodTracker
-//
-//  Created by Дмитрий Кузьмин on 01.08.2020.
-//
-
 import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     
-    //MARK: Properties
+    // MARK: Properties
     private var ratingButtons = [UIButton]()
      
     var rating = 0 {

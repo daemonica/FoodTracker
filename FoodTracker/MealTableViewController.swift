@@ -1,10 +1,3 @@
-//
-//  MealTableViewController.swift
-//  FoodTracker
-//
-//  Created by Дмитрий Кузьмин on 05.08.2020.
-//
-
 import UIKit
 import os.log
 
@@ -21,8 +14,10 @@ class MealTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
         
-        // Load the sample data.
-        loadSampleMeals()
+        // Load any saved meals.
+        if let savedMeals = loadMeals() {
+            meals += savedMeals
+        }
     }
 
     // MARK: - Table view data source
@@ -64,10 +59,11 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             meals.remove(at: indexPath.row)
+            saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
     /*
@@ -116,7 +112,7 @@ class MealTableViewController: UITableViewController {
         }
     }
 
-    //MARK: Actions
+    // MARK: Actions
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
@@ -133,27 +129,25 @@ class MealTableViewController: UITableViewController {
                     meals.append(meal)
                     tableView.insertRows(at: [newIndexPath], with: .automatic)
                 }
+                
+                // Save the meals.
+                saveMeals()
             }
         }
     
     // MARK: Private Methods
     
-    private func loadSampleMeals() {
+    private func saveMeals() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
         
-        let photo1 = UIImage(named: "meal1")
-        let photo2 = UIImage(named: "meal2")
-        let photo3 = UIImage(named: "meal3")
-        
-        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4) else {
-            fatalError("Unable to instantiate meal1")
+        if isSuccessfulSave {
+            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
         }
-        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
-            fatalError("Unable to instantiate meal1")
-        }
-        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        meals += [meal1, meal2, meal3]
+    }
+    
+    private func loadMeals() -> [Meal]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
     }
 }

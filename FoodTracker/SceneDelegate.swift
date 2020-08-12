@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  FoodTracker
-//
-//  Created by Дмитрий Кузьмин on 26.07.2020.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
