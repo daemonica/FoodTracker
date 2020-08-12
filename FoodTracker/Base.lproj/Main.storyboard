@@ -44,6 +44,7 @@
                                     <outlet property="nameLabel" destination="yQ1-cH-GDo" id="CUL-gL-tkp"/>
                                     <outlet property="photoImageView" destination="IBe-yo-2GV" id="VQF-So-Rf8"/>
                                     <outlet property="ratingControl" destination="i4h-Pe-V5Q" id="lqb-KH-Hxf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="1J4-y2-Gnr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,19 +70,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-He-moI">
-                                <rect key="frame" x="16" y="76" width="343" height="420"/>
+                                <rect key="frame" x="16" y="64" width="343" height="452"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-uX-pxi">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <rect key="frame" x="16" y="0.0" width="311" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView autoresizesSubviews="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="oMp-vH-51Z">
-                                        <rect key="frame" x="11.5" y="48" width="320" height="320"/>
+                                        <rect key="frame" x="11.5" y="80" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oMp-vH-51Z" secondAttribute="height" multiplier="1:1" id="0Tv-bC-FWO"/>
@@ -91,11 +92,12 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ibh-Pp-JxI" userLabel="Rating Control" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="376" width="252" height="44"/>
+                                        <rect key="frame" x="45.5" y="408" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="EXd-uX-pxi" secondAttribute="trailing" id="lyz-WY-PGD"/>
+                                    <constraint firstItem="EXd-uX-pxi" firstAttribute="leading" secondItem="Qca-He-moI" secondAttribute="leading" constant="16" id="6vm-d0-5bV"/>
+                                    <constraint firstAttribute="trailing" secondItem="EXd-uX-pxi" secondAttribute="trailing" constant="16" id="Wow-28-e7l"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -171,9 +173,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Usg-TN-8eW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1098" y="-229"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1J4-y2-Gnr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="540" height="540"/>
     </resources>
